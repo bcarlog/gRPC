@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	pb "github.com/bcarlog/gRPC/go/go/github.com/bcarlog/gRPC/go/go"
+	pb "github.com/bcarlog/gRPC/go/go/src/github.com/bcarlog/gRPC/go/go"
 )
 
 func writePerson(w io.Writer, p *pb.Person) {
@@ -16,11 +16,11 @@ func writePerson(w io.Writer, p *pb.Person) {
 
 	for _, pn := range p.Phones {
 		switch pn.Type {
-		case pb.Person_MOBILE:
+		case pb.PhoneType_PHONE_TYPE_MOBILE:
 			fmt.Fprint(w, "  Mobile phone #: ")
-		case pb.Person_HOME:
+		case pb.PhoneType_PHONE_TYPE_HOME:
 			fmt.Fprint(w, "  Home phone #: ")
-		case pb.Person_WORK:
+		case pb.PhoneType_PHONE_TYPE_WORK:
 			fmt.Fprint(w, "  Work phone #: ")
 		}
 		fmt.Fprintln(w, pn.Number)

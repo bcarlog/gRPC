@@ -3,7 +3,7 @@ package tutorial;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/protocolbuffers/protobuf/examples/go/tutorialpb";
+option go_package = "github.com/bcarlog/gRPC/go/go";
 
 message Person {
   string name = 1;
